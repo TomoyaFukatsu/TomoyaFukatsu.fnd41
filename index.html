@@ -1,21 +1,92 @@
+<!-- html ファイル単体で製作→css js 分ける -->
+
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#000000">
-  <script type="text/javascript" src="script.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>設備点検チェックリスト</title>
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100vw;
+    max-width: 420px; /* iPhone画面幅目安 */
+    margin: 20px auto;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 16px;
+    user-select: none;
+  }
+  th {
+    background-color: #0e4a72; /* Excelの青系 */
+    color: white;
+    font-weight: 600;
+  }
+  tr:nth-child(even) td {
+    background-color: #e6f0f8;
+  }
+  tr:nth-child(odd) td {
+    background-color: white;
+  }
+  /* チェック列セルのスタイル */
+  td.check-cell {
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    user-select: none;
+  }
+  td.check-cell.checked {
+    color: #007acc;
+  }
+</style>
 </head>
-
 <body>
-  <h1>DIG プログラミング基礎へようこそ！</h1>
-  <h2>Mac をお使いの方は、 <font color="blue"> Cmd + Option + J</font><br>
-    Windows/Linux をお使いの方は、 <font color="blue"> Control+Shift+J</font> <br>
-    をクリックして、デベロッパーツールを開いてください。</h2>
-  <h2>下記にユニコーンの画像が表示されていれば成功です！</h2>
-  <img src="https://cdn.dribbble.com/users/1281272/screenshots/4515441/unicorn.gif">
-  <h3>30分悩んで進まなくなったら…helpチャンネルで質問してみましょう！</h3>
+<h1>●スマホ版-設備点検 id = "header1"></h1>
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>チェック</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>スイッチ</td><td class="check-cell"></td></tr>
+    <tr><td>モーター</td><td class="check-cell"></td></tr>
+    <tr><td>プーリーの締め付け</td><td class="check-cell"></td></tr>
+    <tr><td>鋸刃ガイド</td><td class="check-cell"></td></tr>
+    <tr><td>ギヤー</td><td class="check-cell"></td></tr>
+    <tr><td>変速プーリ</td><td class="check-cell"></td></tr>
+    <tr><td>安全カバー</td><td class="check-cell"></td></tr>
+    <tr><td>鋸刃の取り付け</td><td class="check-cell"></td></tr>
+  </tbody>
+</table>
+<script>
+  // チェックセルをクリックで〇トグル表示
+  document.querySelectorAll('td.check-cell').forEach(cell => {
+    cell.addEventListener('click', () => {
+      if(cell.classList.contains('checked')){
+        cell.classList.remove('checked');
+        cell.textContent = '';
+      } else {
+        cell.classList.add('checked');
+        cell.textContent = '〇';
+      }
+    });
+  });
+</script>
 </body>
-
 </html>
