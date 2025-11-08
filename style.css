@@ -1,0 +1,51 @@
+  h1 {    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    text-align: center;
+  }
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100vw;
+    max-width: 420px; /* iPhone画面幅目安 */
+    margin: 20px auto;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 16px;
+    user-select: none;
+  }
+  th {
+    background-color: #0e4a72; /* Excelの青系 */
+    color: white;
+    font-weight: 600;
+  }
+  tr:nth-child(even) td {
+    background-color: #e6f0f8;
+  }
+  tr:nth-child(odd) td {
+    background-color: white;
+  }
+  /* チェック列セルのスタイル */
+  td.check-cell {
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    user-select: none;
+  }
+  td.check-cell.checked {
+    color: #007acc;
+  }
